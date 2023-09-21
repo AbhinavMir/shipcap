@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-#define CREDENTIALS_FILE "/Users/abhinavmir/.shipcap"
+#define CREDENTIALS_FILE "~/.shipcap"
 #define MAX_PATH_LENGTH 256
-#define REMOTE_BUCKET "/home/grad1/sabhinav/bucket"
+#define REMOTE_BUCKET "/home/grad1/"
 
 int readCredentials(char* username, char* password) {
     FILE* file = fopen(CREDENTIALS_FILE, "r");
@@ -55,7 +55,9 @@ int main(int argc, char *argv[]) {
 
     char username[MAX_PATH_LENGTH];
     char password[MAX_PATH_LENGTH];
-    char remote_path[MAX_PATH_LENGTH] = REMOTE_BUCKET; // Set the remote path to the bucket
+    char remote_path[MAX_PATH_LENGTH];
+    strcat(remote_path, username);
+    strcat(remote_path, "/bucket");
 
     // Read credentials from ~/.shipcap
     if (readCredentials(username, password) != 0) {
