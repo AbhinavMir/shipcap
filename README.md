@@ -2,6 +2,8 @@
 
 `shipcap` is a simple command-line tool that allows you to securely transfer files between your local machine and a remote server using the SCP (Secure Copy Protocol) over SSH. It is designed to make file transfers easy and secure.
 
+> ‼ You might have to run `make install` as root to install the binary in `/usr/local/bin`. If you're not comfortable with this, you can check [shipcap.c](./shipcap.c) and compile the binary yourself and use it as you wish.
+
 ## Features
 
 - **Push Files**: Upload local files to a remote server.
